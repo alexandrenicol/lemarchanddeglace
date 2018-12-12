@@ -5,6 +5,10 @@
     ],
     "rules": {
         "class-methods-use-this": 0,
-        "no-plusplus":"off"
+        "no-plusplus":"off",
+        "react/prefer-stateless-function":"off",
+        "react/destructuring-assignment":"off",
+        "react/sort-comp":"off",
+        "arrow-body-style":"off"
     }
 }
