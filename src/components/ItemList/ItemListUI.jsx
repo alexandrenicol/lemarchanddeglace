@@ -5,8 +5,7 @@ import {
   List,
   ListItem,
   Card,
-  CardContent,
-  Button
+  CardContent
 } from '@brandwatch/axiom-components';
 
 class ItemList extends Component {
@@ -54,51 +53,63 @@ class ItemList extends Component {
                   item.name
                 )}
               </span>
-              <Button
+              <button
+                type="button"
+                className="btn is-primary"
                 onClick={() =>
                   this.props.addItemToOrder(this.props.category, item)
                 }
               >
                 +
-              </Button>
-              <Button
+              </button>
+              <button
+                type="button"
+                className="btn is-warning"
                 onClick={() =>
                   this.props.removeItemFromOrder(this.props.category, item)
                 }
               >
                 -
-              </Button>
+              </button>
             </div>
           );
         case 'containers':
           return ItemList.isChoosenContainer(this.props.order, item.name) ? (
-            <Button style="quaternary">Selected</Button>
+            <button type="button" className="btn">
+              Selected
+            </button>
           ) : (
-            <Button
+            <button
+              type="button"
+              className="btn is-primary"
               onClick={() =>
                 this.props.addItemToOrder(this.props.category, item)
               }
             >
               Choose
-            </Button>
+            </button>
           );
         case 'toppings':
           return ItemList.toppingIsInOrder(this.props.order, item.name) ? (
-            <Button
+            <button
+              type="button"
+              className="btn is-warning"
               onClick={() =>
                 this.props.removeItemFromOrder(this.props.category, item)
               }
             >
               Remove from order
-            </Button>
+            </button>
           ) : (
-            <Button
+            <button
+              type="button"
+              className="btn is-primary"
               onClick={() =>
                 this.props.addItemToOrder(this.props.category, item)
               }
             >
               Add to order
-            </Button>
+            </button>
           );
         default:
           return false;
@@ -118,13 +129,13 @@ class ItemList extends Component {
     ));
 
     return (
-      <div className="ItemList">
-        <h3 className="categoryTitle">{this.props.category}</h3>
+      <section className="container with-title">
+        <h2 className="title">{this.props.category}</h2>
         <List style="inline" className="Items">
           {listItems}
         </List>
         <hr />
-      </div>
+      </section>
     );
   }
 }

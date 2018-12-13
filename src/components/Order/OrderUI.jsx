@@ -12,8 +12,8 @@ class Order extends Component {
     ));
 
     return (
-      <div className="Order">
-        <div className="categoryTitle">Order</div>
+      <section className="container with-title">
+        <h2 className="title">{this.props.category}</h2>
         <div className="items">
           {this.props.order.container
             ? `Container: ${this.props.order.container.name}`
@@ -21,9 +21,12 @@ class Order extends Component {
           <br />
           <ul>{listScoops}</ul>
           <ul>{listToppings}</ul>
-          {this.props.order.total}
+          {`Total: £${this.props.order.total}`}
+          <button type="button" className="btn is-success" onClick={() => {}}>
+            Submit your order
+          </button>
         </div>
-      </div>
+      </section>
     );
   }
 }

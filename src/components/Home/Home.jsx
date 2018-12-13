@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import '@brandwatch/axiom-materials';
 import {LOAD_DATA, UPDATE_RULES} from '../../store/actionsTypes';
 
 // const Counter = ...

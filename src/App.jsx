@@ -11,19 +11,20 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/"> Home </Link>
-              </li>
-              <li>
-                <Link to="/about"> About </Link>
-              </li>
-              <li>
-                <Link to="/users"> Users </Link>
-              </li>
-            </ul>
-          </nav>
+          <header>
+            <h1>Le Marchand de Glace®</h1>
+              <div className="messages">
+                <div className="message -left">
+                  <div className="balloon from-left">
+                    <p>
+                      Pick your container, your scoops, some toppings and
+                      submit!
+                    </p>
+                  </div>
+                </div>
+              </div>
+          </header>
+
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/users" component={Users} />
