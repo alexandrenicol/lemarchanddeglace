@@ -12,7 +12,6 @@ const mapDispatchToProps = dispatch => {
       )
         .then(response => response.json())
         .then(data => {
-          console.log('data', data);
 
           const containers = data.schema.properties.container.enum;
           const scoops = data.schema.properties.scoops.items.enum;
@@ -25,8 +24,6 @@ const mapDispatchToProps = dispatch => {
             scoops:[],
             toppings:[]
           }
-
-          console.log(maxItems, minItems);
 
 
           for (let index = 0; index < containers.length; index++) {

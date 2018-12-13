@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, GridCell } from '@brandwatch/axiom-components';
 
 import './Home.scss';
@@ -26,6 +27,10 @@ class Home extends Component {
       </div>
     );
   }
+}
+
+Home.propTypes = {
+  loadData: PropTypes.func.isRequired
 }
 
 export default Home;

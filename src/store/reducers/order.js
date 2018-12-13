@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import swal from 'sweetalert';
 
 import {
   ADD_CONTAINER,
@@ -6,7 +7,9 @@ import {
   ADD_TOPPING,
   UPDATE_RULES,
   REMOVE_TOPPING,
-  REMOVE_SCOOP
+  REMOVE_SCOOP,
+  SUBMIT_ORDER,
+  NEW_ORDER
 } from "../actionsTypes";
 
 const initialState = {
@@ -15,12 +18,29 @@ const initialState = {
   toppings: [],
   minScoops: 0,
   maxScoops: 99,
-  total: 0
+  total: 0,
+  submitted: false
 };
 
+
 export default function (state = initialState, action) {
-  console.log('order reducers', action);
   switch (action.type) {
+    case SUBMIT_ORDER: {
+      return {
+        ...state,
+        submitted: true
+      }
+    }
+    case NEW_ORDER: {
+      return {
+        ...state,
+        container: null,
+        scoops: [],
+        toppings: [],
+        total: 0,
+        submitted: false
+      }
+    }
     case ADD_CONTAINER:
       {
         let total = action.payload.price;
@@ -53,6 +73,7 @@ export default function (state = initialState, action) {
             total
           };
         }
+        swal(`You're hungry! However, you can only have up to ${state.maxScoops} scoops`);
         return state
       }
     case REMOVE_SCOOP:

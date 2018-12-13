@@ -17,7 +17,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
   return {
     addItemToOrder: (category, item) => {
-      console.log('addItemToOrder', category, item);
       let action = null;
       switch (category) {
         case 'containers':

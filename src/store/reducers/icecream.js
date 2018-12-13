@@ -9,7 +9,6 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-    console.log('icecream reducers', action);
     switch (action.type) {
         case LOAD_DATA:
             {
