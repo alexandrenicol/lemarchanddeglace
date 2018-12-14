@@ -17,7 +17,8 @@ class Order extends Component {
       </li>
     ));
 
-    return <section className="container with-title">
+    return (
+      <section className="container with-title">
         <h2 className="title">Your order</h2>
         <div className="items">
           <p>
@@ -32,9 +33,7 @@ class Order extends Component {
           </p>
 
           <div>
-            <span>
-              {this.props.order.scoops.length > 0 ? 'Scoops:' : ''}
-            </span>
+            <span>{this.props.order.scoops.length > 0 ? 'Scoops:' : ''}</span>
             <br />
             <ul>{listScoops}</ul>
           </div>
@@ -49,13 +48,18 @@ class Order extends Component {
             <span>Total: </span>
             <Price price={this.props.order.total} showZero={true} />
           </div>
-          <button type="button" className="btn is-success" onClick={() => {
+          <button
+            type="button"
+            className="btn is-success"
+            onClick={() => {
               this.props.submit(this.props.order);
-            }}>
+            }}
+          >
             Submit your order
           </button>
         </div>
-      </section>;
+      </section>
+    );
   }
 }
 
