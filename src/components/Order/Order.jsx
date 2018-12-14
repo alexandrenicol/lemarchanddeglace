@@ -4,6 +4,8 @@ import swal from 'sweetalert';
 import {NEW_ORDER} from '../../store/actionsTypes';
 
 import Order from './OrderUI';
+
+// eslint-disable-next-line
 import van from './images/van.png';
 
 import './Order.scss';

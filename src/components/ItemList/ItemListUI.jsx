@@ -70,7 +70,6 @@ class ItemList extends Component {
   }
 
   render() {
-
     const maxReached =
       this.props.order.scoops.length >= this.props.order.maxScoops;
 
@@ -172,6 +171,8 @@ class ItemList extends Component {
       </ListItem>
     ));
 
+    // style="inline"? 
+    /* eslint-disable */
     return (
       <section className="container with-title ItemList">
         <h2 className="title">{this.props.category}</h2>
@@ -181,6 +182,7 @@ class ItemList extends Component {
         <hr />
       </section>
     );
+    /* eslint-enable */
   }
 }
 

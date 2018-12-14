@@ -9,6 +9,7 @@
         "react/prefer-stateless-function":"off",
         "react/destructuring-assignment":"off",
         "react/sort-comp":"off",
-        "arrow-body-style":"off"
+        "arrow-body-style":"off",
+        "react/style-prop-object":"off"
     }
 }

@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './components/Home/Home';
 
-const About = () => <h2>About</h2>;
-
 class App extends Component {
   render() {
     return (
@@ -25,7 +23,9 @@ class App extends Component {
           </header>
 
           <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
+          <p>
+            <a href="https://webnicol.fr" target="_blank" rel="noopener noreferrer">Made by webnicol.fr</a>
+          </p>
         </div>
       </Router>
     );
