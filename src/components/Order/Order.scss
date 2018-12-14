@@ -1,0 +1,27 @@
+/* Standard syntax */
+@keyframes upAndDown {
+    0% {
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
+
+    50% {
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+
+    100% {
+        padding-top: 0px;
+        padding-bottom: 50px;
+    }
+}
+
+.incoming {
+    img {
+        width: 200px;
+        height: auto;
+        animation-name: upAndDown;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+}
