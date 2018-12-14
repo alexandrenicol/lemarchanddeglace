@@ -6,6 +6,8 @@ import {NEW_ORDER} from '../../store/actionsTypes';
 import Order from './OrderUI';
 import van from './images/van.png';
 
+import './Order.scss';
+
 function capitalize(s) {
   return s && s[0].toUpperCase() + s.slice(1);
 }
@@ -79,12 +81,16 @@ const mapDispatchToProps = dispatch => {
               swal('Oops!', response.errors[0].message, 'error');
             } else {
               swal({
-                title:'YAY!', 
-                text: `Your order number ${response.order_id} has been succesfully submitted, it'll be on its way ASAP!`,
-                icon: {van},
-                button: 'Submit another one!'
+                title: 'YAY!',
+                text: `Your order number ${
+                  response.order_id
+                } has been succesfully submitted, it'll be on its way ASAP!`,
+                icon:
+                  'https://d25pgkqawum7gs.cloudfront.net/static/media/van.a304c17f.png',
+                button: 'Submit another one!',
+                className: 'incoming'
               }).then(() => {
-                dispatch({type: NEW_ORDER});
+                dispatch({ type: NEW_ORDER });
               });
             }
           });

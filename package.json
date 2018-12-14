@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@brandwatch/axiom-components": "^5.9.1",
-    "@brandwatch/axiom-materials": "^1.11.1",
     "lodash": "^4.17.11",
     "node-sass": "^4.10.0",
     "prop-types": "^15.6.2",
@@ -14,8 +13,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
-    "sweetalert": "^2.1.2",
-    "sweetalert-react": "^0.4.11"
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

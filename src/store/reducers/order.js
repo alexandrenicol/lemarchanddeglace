@@ -8,7 +8,6 @@ import {
   UPDATE_RULES,
   REMOVE_TOPPING,
   REMOVE_SCOOP,
-  SUBMIT_ORDER,
   NEW_ORDER
 } from "../actionsTypes";
 
@@ -19,18 +18,11 @@ const initialState = {
   minScoops: 0,
   maxScoops: 99,
   total: 0,
-  submitted: false
 };
 
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case SUBMIT_ORDER: {
-      return {
-        ...state,
-        submitted: true
-      }
-    }
     case NEW_ORDER: {
       return {
         ...state,
@@ -38,7 +30,6 @@ export default function (state = initialState, action) {
         scoops: [],
         toppings: [],
         total: 0,
-        submitted: false
       }
     }
     case ADD_CONTAINER:
